@@ -1,0 +1,25 @@
+// base
+@import "src/styles/base/_typography";
+@import "src/styles/base/_reset.scss";
+
+
+//components
+@import "src/styles/components/_button";
+@import "src/styles/components/_dropdown";
+@import "src/styles/components/_forms.scss";
+@import "src/styles/components/_input.scss";
+
+// layout
+@import "src/styles/layout/_footer";
+@import "src/styles/layout/_grid.scss";
+@import "src/styles/layout/_header.scss";
+@import "src/styles/layout/_sidebar.scss";
+
+
+//themes
+@import "src/styles/themes/_dark.scss";
+@import "src/styles/themes/_default.scss";
+
+//primeNG
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";

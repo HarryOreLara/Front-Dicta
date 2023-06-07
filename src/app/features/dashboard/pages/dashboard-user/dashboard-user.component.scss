@@ -1,0 +1,55 @@
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,300;0,400;1,400;1,500&display=swap');
+
+
+.centrado{
+    text-align: center;
+}
+
+.fondo{
+    //background-color: #ffb300 ;
+    background-image: linear-gradient(to bottom, $primary, $whiteDefauyt);
+
+}
+
+h1,h3{
+    font-family: 'Playfair', serif;
+    padding: 20px;
+    
+}
+
+h1{
+    color: $secondary;
+}
+
+.salto{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.video{
+    border: 20px solid;
+    border-radius: 20px;
+    margin: 15px;
+    height: 1080px;
+}
+
+.contenido-video{
+    height: 100%;
+    width: 100%;
+}
+
+.telefono{
+
+    height: 800px;
+    padding: 100px;
+    background-image: linear-gradient(to bottom,$whiteDefauyt, $primary );
+    
+}
+
+
+
+p{
+    font-size: 20px;
+}
