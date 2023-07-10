@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+  mostrar:boolean = false;
   formRegister: FormGroup = this.fb.group({
     username: ['', Validators.required, Validators.minLength(5)],
     email: ['', [Validators.required, Validators.email]],
