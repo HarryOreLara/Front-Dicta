@@ -1,15 +1,66 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+  formRegister: FormGroup = this.fb.group({
+    username: ['', Validators.required, Validators.minLength(5)],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    password2:['', [Validators.required, Validators.minLength(6)]],
+  });
 
-  constructor() { }
+  roles = [
+    {
+      name: 1
+    },
+    {
+      name: 2
+    },
+    {
+      name:3
+    }
+  ]
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  register() {
+    const {password, password2} = this.formRegister.value;
+
+    if (password===password2) {
+      this.authService.registerService(this.formRegister.value).subscribe(res=>{
+        if(res==true){
+          localStorage.setItem('user', JSON.stringify(this.authService.user));
+          //aca va la redireccion
+          console.log("Exito al guardar")
+        }else{
+          Swal.fire({
+            title: 'Error...',
+            icon: 'error',
+            text:res
+          });
+        }
+      });
+    }else{
+      Swal.fire({
+        title: 'Error...',
+        icon: 'error',
+        text: 'Las contraseñas deben ser iguales'
+      });
+    }
+
+
   }
-
 }

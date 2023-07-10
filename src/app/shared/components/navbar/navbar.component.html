@@ -1,22 +1,16 @@
-<nav  class="navi">
-  <div class="nav-wrapper ">
-    <a  routerLink="/" class="brand-logo logo">Dicta</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a class="separator" href="sass.html">Niños</a></li>
-      <li><a class="separator" href="badges.html">Jovenes</a></li>
-      <li><a class="separator" href="collapsible.html">Padres</a></li>
-      <li><a class="separator" href="collapsible.html">Blog</a></li>
-      <li><a class="separator" href="collapsible.html">Academia</a></li>
-      <li><button (click)="sesionInit()" class=" separator btn waves-effect waves-light #ffb300 amber " style="color: azure;">Iniciar Sesion</button></li>
-    </ul>
-  </div>
-</nav>
-
-<p-menubar [model]="items">
+<p-menubar [model]="items" styleClass="navbar-container">
   <ng-template pTemplate="start">
-      <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2" />
+      <img src="assets/logo.webp" routerLink="/" style="cursor: pointer;" height="60" class="mr-2" />
   </ng-template>
-  <ng-template pTemplate="end">
-      <input type="text" pInputText placeholder="Search" class="w-full" />
+
+  <ng-template *ngIf="!boolName" pTemplate="end">
+    <p-button label="Iniciar Sesion" routerLink="/auth/login"  styleClass="p-button-lg p-button-warning" ></p-button>
   </ng-template>
+
+  <ng-template *ngIf="boolName" pTemplate="end">
+    <p-button [label]="valor.username" ></p-button>
+  </ng-template>
+  
 </p-menubar>
+
+

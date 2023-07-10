@@ -1,0 +1,3 @@
+Este carpeta llamada service-datos-nav, por ahora hasta la fecha
+21-06-2023 contiene la informacion de las card del bloque 3 de la vista usuarios del boton de navegacion
+de los padres, el html se estaba volviedno repetido por eso se opto por optimizar ese codigo y hacerlo con un ngFor

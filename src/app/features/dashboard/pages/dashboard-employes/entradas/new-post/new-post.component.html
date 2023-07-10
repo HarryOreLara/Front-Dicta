@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col s12 m3">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col s12 m9">
+    <form>
+      <br />
+      <div class="form-group">
+        <label for="titulo">Titulo</label>
+        <input
+          type="text"
+          name="titulo"
+          class="form-control"
+          placeholder="Escribe un titulo"
+          aria-describedby="helpId"
+        />
+        <small id="titulo" class="text-muted"></small>
+      </div>
+    <br/>
+      <div class="form-group">
+        <label for="titulo">Frase clave objetivo</label>
+        <input
+          type="text"
+          name="titulo"
+          class="form-control"
+          placeholder="Escribe la frase clave"
+          aria-describedby="helpId"
+        />
+        <small id="titulo" class="text-muted">La frase clave objetivo debe ser similar a tu titulo</small>
+      </div>
+      <br/>
+      <div class="form-group">
+        <label for="titulo">Slug del Post</label>
+        <input
+          type="text"
+          name="titulo"
+          class="form-control"
+          placeholder="Escribe el slug del post"
+          aria-describedby="helpId"
+        />
+        <small id="titulo" class="text-muted">El slug del post debe incluir los sinonimos del Post</small>
+      </div>
+      <br/>
+      <div>
+        <label for="metadescripcion">Metadescripcion</label>
+        <textarea rows="5" cols="30" pInputTextarea></textarea>
+        <small id="metadescripcion" class="text-muted"></small>
+      </div>
+      <br/>
+      <div>
+        <label for="parrafo1">Parrafo 1</label>
+        <textarea rows="5" cols="30" pInputTextarea></textarea>
+        <small id="parrafo1" class="text-muted"></small>
+      </div>
+      <div>
+        <label for="parrafo2">Parrafo 2</label>
+        <textarea rows="5" cols="30" pInputTextarea></textarea>
+        <small id="parrafo2" class="text-muted"></small>
+      </div>
+      <div>
+        <label for="parrafo3">Parrafo 3</label>
+        <textarea rows="5" cols="30" pInputTextarea></textarea>
+        <small id="parrafo3" class="text-muted"></small>
+      </div>
+      <div>
+        <label for="parrafo4">Parrafo 4</label>
+        <textarea rows="5" cols="30" pInputTextarea></textarea>
+        <small id="parrafo4" class="text-muted"></small>
+      </div>
+      <hr />
+      <div class="form-group">
+        <label for="archivo1">Imagen para el parrafo 1:</label>
+        <p-fileUpload name="archivo1" formControlName="archivo1"></p-fileUpload>
+      </div>
+      <div class="form-group">
+        <label for="archivo2">Imagen para el parrafo 2:</label>
+        <p-fileUpload name="archivo2" formControlName="archivo2"></p-fileUpload>
+      </div>
+      <div class="form-group">
+        <label for="archivo3">Imagen para el parrafo 3:</label>
+        <p-fileUpload name="archivo3" formControlName="archivo3"></p-fileUpload>
+      </div>
+      <div class="form-group">
+        <label for="archivo4">Imagen para el parrafo 4:</label>
+        <p-fileUpload name="archivo4" formControlName="archivo4"></p-fileUpload>
+      </div>
+      <br/>
+      <hr>
+      <div class="form-group">
+        <span>Categoria:</span>
+        <p-multiSelect [options]="cities" formControlName="categoria" optionLabel="categoria"></p-multiSelect>
+      </div>
+      <br>
+      <p-button label="Publicar Post"></p-button>
+    </form>
+  </div>
+</div>

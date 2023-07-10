@@ -1,0 +1,46 @@
+<div class="row primer-bloque">
+  <div class="col s12 m6">
+    <div class="row" style="margin-top: 150px">
+      <h2>
+        Desarrolla las habilidades básicas para proteger a los tuyos de los
+        riegos cibernéticos
+      </h2>
+    </div>
+    <div class="row">
+      <p>
+        Prepárate y prepara a tu hijo para que enfrente los desafíos de la era
+        digital
+      </p>
+    </div>
+  </div>
+  <div class="col s12 m6 imagenes-centrado">
+    <p-image
+      src="assets/dashboard/academia/cursos/cursos1.webp"
+      alt="Image"
+      width="650"
+    ></p-image>
+  </div>
+</div>
+
+<div class="row cuarto-bloque">
+  <div class="col s12 m12">
+    <br />
+    <br />
+    <p style="font-size: 45px">
+      Cuando te educas en pautas de crianza digital recibes estos beneficios:
+    </p>
+  </div>
+  <div class="col s12 m4 estilo-card" *ngFor="let info of information">
+    <p-card [header]="info.header" [style]="{ width: '460px' }">
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://primefaces.org/cdn/primeng/images/usercard.png"
+        />
+      </ng-template>
+      <p>
+        {{ info.descripcion }}
+      </p>
+    </p-card>
+  </div>
+</div>

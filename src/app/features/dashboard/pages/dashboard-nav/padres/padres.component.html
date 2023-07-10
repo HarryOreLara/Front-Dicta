@@ -1,0 +1,140 @@
+<div class="row primer-bloque">
+  <div class="col s12 m6">
+    <div class="row" style="margin-top: 150px">
+      <h2>¿Por qué enseñar pautas de crianza digital efectiva?</h2>
+    </div>
+    <div class="row">
+      <p>
+        Porque la clave de las habilidades a desarrollar en niños es todo
+        aquello que no sea automatizable, pues tendrá un valor incalculable en
+        el futuro.
+      </p>
+      <p>(Marc Vidal)</p>
+    </div>
+    <div class="row boton">
+      <button class="btn btn-primary" style="border-radius: 20px; color: #000">
+        Contactanos
+      </button>
+    </div>
+  </div>
+  <div class="col s12 m6 imagenes-centrado">
+    <p-image
+      src="assets/dashboard/padres/padres.webp"
+      alt="Image"
+      width="650"
+    ></p-image>
+  </div>
+</div>
+
+<div class="row segundo-bloque eliminar-margen-top">
+  <div class="col s12 m6" style="margin-top: 10%">
+    <div class="row">
+      <p>
+        “Cuando delegamos la responsabilidad de la crianza digital a los medios
+        de comunicación y a los medios digitales, ayudas a que tu hijo se
+        convierta en un huérfano digital”
+      </p>
+    </div>
+    <div class="row boton">
+      <button class="btn btn-primary" style="border-radius: 20px; color: #000">
+        Contactanos
+      </button>
+    </div>
+  </div>
+  <div class="col s12 m6 imagenes-centrado">
+    <p-image
+      src="assets/dashboard/padres/padre2.webp"
+      alt="Image"
+      width="650"
+    ></p-image>
+  </div>
+</div>
+
+<div class="row tercer-bloque">
+  <div class="col s12 m12">
+    <br />
+    <br />
+    <p>¿Sabías qué?</p>
+  </div>
+  <div class="col s12 m6" style="margin-top: 50px">
+    <div class="row caja" style="background-color: #ffb300">
+      <div class="col">
+        40% de menores de 14 años manejan redes sociales sin supervisión y con
+        acceso a todo tipo de contenido
+      </div>
+    </div>
+    <div class="row caja" style="background-color: #df0e0e">
+      <div class="col">
+        Solo el 9% de los padres en Colombia toma la precaución de abrir un
+        acceso controlado a sus hijos
+      </div>
+    </div>
+    <div class="row caja" style="background-color: #0e85df">
+      <div class="col">60% de niños están expuestos a riesgos cibernéticos</div>
+    </div>
+    <div class="row caja" style="background-color: #1fa848">
+      <div class="col">
+        7 años es la edad promedio para el inicio al mundo de internet
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 espejo">
+    <p-image
+      src="assets/dashboard/padres/padres3.webp"
+      alt="Image"
+      width="650"
+    ></p-image>
+  </div>
+</div>
+
+<div class="row cuarto-bloque">
+  <div class="col s12 m12">
+    <br />
+    <br />
+    <p style="font-size: 45px;">
+      Cuando te educas en pautas de crianza digital recibes estos beneficios:
+    </p>
+  </div>
+  <div class="col s12 m4 estilo-card" *ngFor="let info of information">
+    <p-card [header]="info.header" [style]="{ width: '460px' }">
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://primefaces.org/cdn/primeng/images/usercard.png"
+        />
+      </ng-template>
+      <p>
+        {{ info.descripcion }}
+      </p>
+    </p-card>
+  </div>
+</div>
+
+
+<div class="row quinto-bloque ">
+  <div class="col s12 m6">
+    <div class="row" style="margin-top: 20%">
+      <p>
+        “La educación es lo que queda después de olvidar lo que se ha aprendido
+        en la escuela” Albert Einstein
+      </p>
+      <p>
+        ¡No esperes más! Aprende y guía a tu hijo para su futuro en la era
+        digital.
+      </p>
+    </div>
+    <div class="row boton">
+      <button class="btn btn-primary" style="border-radius: 20px; color: #fff">
+        Quiero empezar
+      </button>
+    </div>
+  </div>
+  <div class="col s12 m6 imagenes-centrado">
+    <p-image
+      src="assets/dashboard/padres/padres4.webp"
+      alt="Image"
+      width="650"
+    ></p-image>
+  </div>
+</div>
