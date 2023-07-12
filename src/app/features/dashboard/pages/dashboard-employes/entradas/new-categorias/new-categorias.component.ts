@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCategoriaService } from '../../shared/entrada/categoria/api-categoria.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-categorias',
@@ -37,9 +38,28 @@ export class NewCategoriasComponent implements OnInit {
   }
 
   guardar() {
+
+    // this.apiCategoria.create(this.formCategoria.value).subscribe((res)=>{
+    //   this.formCategoria.reset();
+    //   this.read();
+    // });
+
     this.apiCategoria.create(this.formCategoria.value).subscribe((res)=>{
-      this.formCategoria.reset();
-      this.read();
+      if (res===true) {
+        Swal.fire({
+          title:'Exito',
+          icon:'success',
+          text:"Categoria Creada Correctamente"
+        });
+        this.formCategoria.reset();
+        this.read();
+      }else{
+        Swal.fire({
+          title: 'Error...',
+          icon: 'error',
+          text: 'Ups! Algo Paso'
+        });
+      }
     });
   }
 

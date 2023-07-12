@@ -1,17 +1,18 @@
 <div class="row">
-    <div class="col s12 m3">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div class="col s12 m4">
+  <div class="col s12 m3">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col s12 m4">
+    <form [formGroup]="formEtiqueta" (ngSubmit)="guardar()">
       <div class="form-group">
         <br />
         <span>Añadir nueva etiqueta</span>
         <br />
         <br />
-        <label for="titulo">Etiqueta</label>
+        <label for="nombre">Nombre</label>
         <input
           type="text"
-          name="titulo"
+          formControlName="nombre"
           class="form-control"
           aria-describedby="helpId"
         />
@@ -19,53 +20,62 @@
       </div>
       <br />
       <div class="form-group">
-        <label for="titulo">Slug</label>
+        <label for="slug">Slug</label>
         <input
           type="text"
-          name="titulo"
+          formControlName="slug"
           class="form-control"
           aria-describedby="helpId"
         />
         <small id="titulo" class="text-muted"
-          >El «slug» es la versión amigable de la URL para el nombre. Suele estar
-          en todo en minúsculas y contiene solo letras, números y guiones.</small
+          >El «slug» es la versión amigable de la URL para el nombre. Suele
+          estar en todo en minúsculas y contiene solo letras, números y
+          guiones.</small
         >
       </div>
       <br />
       <div>
-        <label for="parrafo1">Descripción</label>
-        <textarea rows="5" cols="30" pInputTextarea></textarea>
-        <small id="parrafo1" class="text-muted"
+        <label for="descripcion">Descripción</label>
+        <textarea
+          formControlName="descripcion"
+          rows="5"
+          cols="30"
+          pInputTextarea
+        ></textarea>
+        <small id="descripcion" class="text-muted"
           >La descripción no se muestra por defecto; sin embargo, hay algunos
           temas que pueden mostrarla.</small
         >
       </div>
       <br />
       <p-button
+        type="ngSubmit"
         label="Añadir nueva etiqueta"
         styleClass="p-button-raised p-button-primary"
       ></p-button>
-    </div>
-    <br>
-    <div class="col s12 m5">
-      <p-table [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header">
-          <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-product>
-          <tr>
-            <td>{{ product.code }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.quantity }}</td>
-          </tr>
-        </ng-template>
-      </p-table>
-    </div>
+    </form>
   </div>
-  
+  <br />
+  <div class="col s12 m5">
+    <p-table
+      [columns]="cols"
+      [value]="etiquetas"
+      [tableStyle]="{ 'min-width': '50rem' }"
+    >
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{ col.header }}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+          <td *ngFor="let col of columns">
+            {{ rowData[col.field] }}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

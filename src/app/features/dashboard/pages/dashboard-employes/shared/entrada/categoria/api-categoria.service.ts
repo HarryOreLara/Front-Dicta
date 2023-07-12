@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, map, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -31,9 +32,18 @@ export class ApiCategoriaService {
       'x-auth-token': this.user.token,
     };
 
+    // return this.http.post<any>(`${this.baseUrl}/categoria/create`, form, {
+    //   headers,
+    // });
+    
     return this.http.post<any>(`${this.baseUrl}/categoria/create`, form, {
       headers,
-    });
+    }).pipe(
+      map((res)=>{
+        return res.ok
+      }),
+      catchError((err)=>of(err.error.msg))
+    );
   }
 
   update() {}
