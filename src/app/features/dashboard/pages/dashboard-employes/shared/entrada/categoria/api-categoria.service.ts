@@ -3,32 +3,40 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiCategoriaService {
-
   private baseUrl = environment.baseUrl;
   private _user: any = JSON.parse(localStorage.getItem('user')!);
-  
-  get user(){
+
+  get user() {
     return this._user;
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  read(){
+  read() {
     const headers = {
       'x-auth-token': this.user.token,
     };
 
-    return this.http.get<any>(`${this.baseUrl}/categoria/read`,{headers});
-    
-  };
+    return this.http.get<any>(`${this.baseUrl}/categoria/read`, { headers });
+  }
 
-  create(){}
+  create(form: any) {
+    //localhost:3000/categoria/create
 
-  update(){}
+    console.log(form);
+    const headers = {
+      'x-auth-token': this.user.token,
+    };
 
-  delete(){}
+    return this.http.post<any>(`${this.baseUrl}/categoria/create`, form, {
+      headers,
+    });
+  }
 
+  update() {}
+
+  delete() {}
 }

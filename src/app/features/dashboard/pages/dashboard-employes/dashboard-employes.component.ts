@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardEmployesComponent implements OnInit {
 
-
-
+  
   ngOnInit(): void {
   }
 

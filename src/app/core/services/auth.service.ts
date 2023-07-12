@@ -53,9 +53,15 @@ export class AuthService {
             rol: res.rol,
             token: res.token
           }
+        }else{
+          this._user = null;
         }
-      })
-    )
+      }),
+      map((res)=>{
+        return res.ok;
+      }),
+      catchError((err)=>of(err.error.msg))
+    );
   }
 
 

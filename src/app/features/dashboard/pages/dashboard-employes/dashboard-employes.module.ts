@@ -19,6 +19,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { AllUsuariosComponent } from './usuarios/all-usuarios/all-usuarios.component';
 import { PerfilComponent } from './usuarios/perfil/perfil.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -45,7 +46,8 @@ import { AllRolesComponent } from './roles/all-roles/all-roles.component';
     RatingModule,
     TagModule,
     ButtonModule,
-    MultiSelectModule
+    MultiSelectModule,
+    ReactiveFormsModule
   ],
 })
 export class DashboardEmployesModule {}
