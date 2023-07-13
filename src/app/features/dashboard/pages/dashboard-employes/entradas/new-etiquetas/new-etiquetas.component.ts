@@ -35,11 +35,6 @@ export class NewEtiquetasComponent implements OnInit{
 
   guardar(){
 
-    // console.log(this.formEtiqueta.value);
-    // this.apiEtiqueta.create(this.formEtiqueta.value).subscribe((res)=>{
-    //   this.formEtiqueta.reset();
-    //   this.read();
-    // });
 
     this.apiEtiqueta.create(this.formEtiqueta.value).subscribe((res)=>{
       if (res===true) {

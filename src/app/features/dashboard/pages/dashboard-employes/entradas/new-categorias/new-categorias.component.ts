@@ -39,11 +39,6 @@ export class NewCategoriasComponent implements OnInit {
 
   guardar() {
 
-    // this.apiCategoria.create(this.formCategoria.value).subscribe((res)=>{
-    //   this.formCategoria.reset();
-    //   this.read();
-    // });
-
     this.apiCategoria.create(this.formCategoria.value).subscribe((res)=>{
       if (res===true) {
         Swal.fire({
