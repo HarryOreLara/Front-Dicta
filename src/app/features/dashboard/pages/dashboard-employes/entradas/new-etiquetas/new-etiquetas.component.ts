@@ -64,7 +64,7 @@ export class NewEtiquetasComponent implements OnInit{
   
   read(){
     this.apiEtiqueta.read().subscribe((res)=>{
-      this.etiquetas = res.etiquetas;
+      this.etiquetas = res.etiqueta;
     });
   }
 
