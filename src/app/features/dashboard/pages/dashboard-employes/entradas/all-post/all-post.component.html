@@ -4,47 +4,24 @@
   </div>
   <div class="col s12 m9" >
     <br>
-    <p-table [value]="post">
-      <ng-template pTemplate="caption">
-        <div class="flex align-items-center justify-content-between">
-          Todos los Post
-          <p-button icon="pi pi-refresh"></p-button>
-        </div>
-      </ng-template>
-      <ng-template pTemplate="header">
+    <p-table
+      [columns]="cols"
+      [value]="poust"
+      [tableStyle]="{ 'min-width': '50rem' }"
+    >
+      <ng-template pTemplate="header" let-columns>
         <tr>
-          <th>Titulo</th>
-          <th>Autor</th>
-          <th>Categorias</th>
-          <th>Etiquetas</th>
-          <th>Fecha</th>
-          <th>Status</th>
+          <th *ngFor="let col of columns">
+            {{ col.header }}
+          </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-product>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
-          <td>{{ product.name }}</td>
-          <td>
-            <img
-              [src]="
-                'https://primefaces.org/cdn/primeng/images/demo/product/' +
-                product.image
-              "
-              [alt]="product.name"
-              width="100"
-              class="shadow-4"
-            />
+          <td *ngFor="let col of columns">
+            {{ rowData[col.field] }}
           </td>
-          <td>{{ product.price | currency : "USD" }}</td>
-          <td>{{ product.category }}</td>
-          <td><p-rating [readonly]="true" [cancel]="false"></p-rating></td>
-          <td><p-tag [value]="product.inventoryStatus"></p-tag></td>
         </tr>
-      </ng-template>
-      <ng-template pTemplate="summary">
-        <div class="flex align-items-center justify-content-between">
-          In total there are 5 products.
-        </div>
       </ng-template>
     </p-table>
   </div>
