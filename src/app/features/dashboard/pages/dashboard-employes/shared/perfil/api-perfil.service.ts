@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, tap, of } from 'rxjs';
+import { catchError, map, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ApiEtiquetaService {
+export class ApiPerfilService {
   private baseUrl = environment.baseUrl;
   private _user: any = JSON.parse(localStorage.getItem('user')!);
 
@@ -16,27 +16,13 @@ export class ApiEtiquetaService {
 
   constructor(private http: HttpClient) {}
 
-  read() {
-    const headers = {
-      'x-auth-token': this.user.token,
-    };
-
-    return this.http.get<any>(`${this.baseUrl}/etiqueta/read`, { headers });
-  }
-
   create(form: any) {
     const headers = {
       'x-auth-token': this.user.token,
     };
 
-    // return this.http.post<any>(`${this.baseUrl}/etiqueta/create`, form, {
-    //   headers,
-    // });
-
     return this.http
-      .post<any>(`${this.baseUrl}/etiqueta/create`, form, {
-        headers,
-      })
+      .post<any>(`${this.baseUrl}/persona/create`, form, { headers })
       .pipe(
         map((res) => {
           return res.ok;

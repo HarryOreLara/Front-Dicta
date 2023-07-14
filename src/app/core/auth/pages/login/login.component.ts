@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
+  emailUpdate: any = "";
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -27,6 +29,8 @@ export class LoginComponent implements OnInit {
     this.authService.loginService(this.formLogin.value).subscribe((res) => {
       if (res === true) {
         localStorage.setItem('user', JSON.stringify(this.authService.user));
+        localStorage.setItem('email', JSON.stringify(this.formLogin.value.email))
+        //this.emailUpdate = this.formLogin.value.email;
         //console.log(this.authService.user.username);
         switch (this.authService.user.rol) {
           case 1:

@@ -20,7 +20,7 @@ import { AllUsuariosComponent } from './usuarios/all-usuarios/all-usuarios.compo
 import { PerfilComponent } from './usuarios/perfil/perfil.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ListboxModule } from 'primeng/listbox';
 
 
 
@@ -47,7 +47,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TagModule,
     ButtonModule,
     MultiSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ListboxModule
   ],
 })
 export class DashboardEmployesModule {}
