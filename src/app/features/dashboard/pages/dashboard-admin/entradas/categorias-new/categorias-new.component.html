@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col s12 m3">
+      <app-sidebar-admin></app-sidebar-admin>
+    </div>
+    <div class="col s12 m4">
+      <form [formGroup]="formCategoria" (ngSubmit)="guardar()">
+        <div class="form-group">
+          <br />
+          <span>Añadir nueva categoria</span>
+          <br />
+          <br />
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            formControlName="nombre"
+            class="form-control"
+            aria-describedby="helpId"
+          />
+          <small id="titulo" class="text-muted"></small>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="slug">Slug</label>
+          <input
+            type="text"
+            class="validate"
+            aria-describedby="helpId"
+            formControlName="slug"
+          />
+          <small id="slug" class="text-muted"
+            >El «slug» es la versión amigable de la URL para el nombre. Suele
+            estar en todo en minúsculas y contiene solo letras, números y
+            guiones.</small
+          >
+        </div>
+        <br />
+        <div>
+          <label for="descripcion">Descripción</label>
+          <textarea formControlName="descripcion" rows="5" cols="30"></textarea>
+          <small id="descripcion" class="text-muted"
+            >La descripción no se muestra por defecto; sin embargo, hay algunos
+            temas que pueden mostrarla.</small
+          >
+        </div>
+        <br />
+        <p-button
+          type="ngSubmit"
+          label="Añadir nueva categoria"
+          styleClass="p-button-raised p-button-success"
+        ></p-button>
+      </form>
+    </div>
+    <br />
+    <div class="col s12 m5">
+      <p-table
+        [columns]="cols"
+        [value]="products"
+        [tableStyle]="{ 'min-width': '50rem' }"
+      >
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{ col.header }}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns">
+              {{ rowData[col.field] }}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+  

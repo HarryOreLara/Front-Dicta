@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path:"dashboardAdmin",
-    component: DashboardAdminComponent
+    loadChildren:()=>import("../dashboard/pages/dashboard-admin/dashboard-admin.module").then(m=>m.DashboardAdminModule)
   },
   {
     path:"dashboardEmployes",

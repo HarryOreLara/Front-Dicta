@@ -1,0 +1,139 @@
+<div class="row">
+    <div class="col s12 m3">
+      <app-sidebar-admin></app-sidebar-admin>
+    </div>
+    <div class="col s12 m9">
+      <form [formGroup]="formPoust" (ngSubmit)="guardar()">
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="form-group">
+              <label for="titulo">Titulo</label>
+              <input
+                type="text"
+                formControlName="titulo"
+                class="form-control"
+                placeholder="Escribe un titulo"
+                aria-describedby="helpId"
+              />
+              <small id="titulo" class="text-muted"></small>
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="fraseClave">Frase clave objetivo</label>
+              <input
+                type="text"
+                formControlName="fraseClave"
+                class="form-control"
+                placeholder="Escribe la frase clave"
+                aria-describedby="helpId"
+              />
+              <small id="fraseClave" class="text-muted"
+                >La frase clave objetivo debe ser similar a tu titulo</small
+              >
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="slug">Slug del Post</label>
+              <input
+                type="text"
+                formControlName="slug"
+                class="form-control"
+                placeholder="Escribe el slug del post"
+                aria-describedby="helpId"
+              />
+              <small id="slug" class="text-muted"
+                >El slug del post debe incluir los sinonimos del Post</small
+              >
+            </div>
+            <br />
+            <div>
+              <label for="metadescripcion">Metadescripcion</label>
+              <textarea
+                rows="5"
+                formControlName="metadescripcion"
+                cols="30"
+                pInputTextarea
+              ></textarea>
+              <small id="metadescripcion" class="text-muted"></small>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div>
+              <label for="parrafo1">Parrafo 1</label>
+              <textarea
+                rows="5"
+                formControlName="parrafo1"
+                cols="30"
+                pInputTextarea
+              ></textarea>
+              <small id="parrafo1" class="text-muted"></small>
+            </div>
+            <div>
+              <label for="parrafo2">Parrafo 2</label>
+              <textarea
+                rows="5"
+                formControlName="parrafo2"
+                cols="30"
+                pInputTextarea
+              ></textarea>
+              <small id="parrafo2" class="text-muted"></small>
+            </div>
+            <div>
+              <label for="parrafo3">Parrafo 3</label>
+              <textarea
+                rows="5"
+                formControlName="parrafo3"
+                cols="30"
+                pInputTextarea
+              ></textarea>
+              <small id="parrafo3" class="text-muted"></small>
+            </div>
+            <div>
+              <label for="parrafo4">Parrafo 4</label>
+              <textarea
+                rows="5"
+                formControlName="parrafo4"
+                cols="30"
+                pInputTextarea
+              ></textarea>
+              <small id="parrafo4" class="text-muted"></small>
+            </div>
+            <div class="form-group">
+              <span>Categoria:</span>
+              <p-multiSelect
+                [options]="opciones"
+                formControlName="categoria"
+              ></p-multiSelect>
+            </div>
+          </div>
+          <br>
+          <br>
+        </div>
+        <div class="row">
+          <div class="col s12 m6">
+            <label for="archivo1">Imagen para el parrafo 1:</label>
+            <input type="file" formControlName="archivo1" />
+          </div>
+          <div class="col s12 m6">
+            <label for="archivo2">Imagen para el parrafo 1:</label>
+            <input type="file" formControlName="archivo2" />
+          </div>
+          <div class="col s12 m6">
+            <label for="archivo3">Imagen para el parrafo 1:</label>
+            <input type="file" formControlName="archivo3" />
+          </div>
+          <div class="col s12 m6">
+            <label for="archivo4">Imagen para el parrafo 1:</label>
+            <input type="file" formControlName="archivo4" />
+          </div>
+        </div>
+        <br />
+        <p-button
+          type="ngSubmit"
+          label="Publicar Post"
+          styleClass="p-button-raised p-button-primary"
+        ></p-button>
+      </form>
+    </div>
+  </div>
+  

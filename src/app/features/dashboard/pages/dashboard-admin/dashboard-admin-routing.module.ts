@@ -1,7 +1,63 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardAdminComponent } from './dashboard-admin.component';
+import { NewUsuarioComponent } from './usuarios/new-usuario/new-usuario.component';
+import { NewRolComponent } from './roles/new-rol/new-rol.component';
+import { PoustAllComponent } from './entradas/poust-all/poust-all.component';
+import { CategoriasNewComponent } from './entradas/categorias-new/categorias-new.component';
+import { EtiquetasNewComponent } from './entradas/etiquetas-new/etiquetas-new.component';
+import { PerfilAdminComponent } from './usuarios/perfil-admin/perfil-admin.component';
+import { RolesAllComponent } from './roles/roles-all/roles-all.component';
+import { VersionComponent } from './home/version/version.component';
+import { UsuariosAllComponent } from './usuarios/usuarios-all/usuarios-all.component';
+import { PoustNewComponent } from './entradas/poust-new/poust-new.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'',
+    component: DashboardAdminComponent
+  },
+  {
+    path:'newUsuario',//Disponible solo para el admin
+    component: NewUsuarioComponent
+  },
+  {
+    path:'newRol',//Disponible solo para el admin
+    component: NewRolComponent
+  },
+  {
+    path:'poust-all',
+    component:PoustAllComponent
+  },
+  {
+    path: 'poust-new',
+    component: PoustNewComponent
+  },
+  {
+    path: 'categoria-new',
+    component: CategoriasNewComponent
+  },
+  {
+    path: 'etiqueta-new',
+    component: EtiquetasNewComponent
+  },
+  {
+    path:'usuarios-all',
+    component: UsuariosAllComponent
+  },
+  {
+    path: 'perfilAdmin',
+    component: PerfilAdminComponent
+  },
+  {
+    path: 'roles',
+    component: RolesAllComponent
+  },
+  {
+    path: 'version',
+    component: VersionComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -9,8 +9,8 @@ import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin
 
 @NgModule({
   declarations: [
-    DashboardUserComponent,
-    DashboardAdminComponent,
+    //DashboardUserComponent,
+    //DashboardAdminComponent,
   ],
   imports: [
     CommonModule,
