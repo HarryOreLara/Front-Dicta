@@ -1,0 +1,71 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col s12 m12">
+      <form [formGroup]="formPerfil" (ngSubmit)="guardar()">
+        <div>
+          <label for="username">Username</label>
+          <input
+            id="disabled-input"
+            type="text"
+            pInputText
+            [disabled]="true"
+            value="Test1"
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input
+            id="disabled-input"
+            type="text"
+            pInputText
+            [disabled]="true"
+            value="mail3@gmail.com"
+          />
+        </div>
+        <div>
+          <label for="tipo">Rol</label>
+          <input
+            id="disabled-input"
+            type="text"
+            pInputText
+            [disabled]="true"
+            value="Trabajador"
+          />
+        </div>
+        <div>
+          <label for="nombre">Nombre</label>
+          <input type="text" pInputText formControlName="nombre" />
+        </div>
+        <div>
+          <label for="apellidos">Apellidos</label>
+          <input type="text" pInputText formControlName="apellidos" />
+        </div>
+        <div>
+          <label for="edad">Edad</label>
+          <input type="number" pInputText formControlName="edad" />
+        </div>
+        <div>
+          <label for="genero">Genero</label>
+          <p-listbox
+            [options]="genero"
+            formControlName="genero"
+            optionValue="value"
+            optionLabel="name"
+            [style]="{ width: '15rem' }"
+          ></p-listbox>
+        </div>
+        <div>
+          <label for="telefono">Telefono</label>
+          <input type="number" pInputText formControlName="telefono" />
+        </div>
+        <div>
+          <p-button type="ngSubmit" icon="pi pi-check" label="Guardar Perfil"></p-button>
+          <p-button [ngClass]="'my-button'" (onClick)="verCursos()" icon="pi pi-arrow-up-right" label="VER CURSOS"></p-button>
+        </div>
+        <br />
+      </form>
+    </div>
+    <br />
+  </div>
+</div>

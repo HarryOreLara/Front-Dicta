@@ -57,6 +57,20 @@ export class NavbarComponent implements OnInit {
         },
       ],
     },
+    {
+      label:'Opciones',
+      icon:'',
+      items:[
+        {
+          label:'Apariencia',
+          command:()=>this.changeApariencia()
+        },
+        {
+          label:'Cerrar Sesion',
+          command:()=>this.cerrarSesion()
+        }
+      ]
+    }
   ];
 
   constructor(private router: Router, private authService: AuthService) {
@@ -76,4 +90,12 @@ export class NavbarComponent implements OnInit {
     }    
   }
 
+  cerrarSesion(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
+
+  changeApariencia(){
+
+  }
 }

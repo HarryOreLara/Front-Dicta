@@ -8,7 +8,8 @@ import { NinosComponent } from './pages/dashboard-nav/ninos/ninos.component';
 const routes: Routes = [
   {
     path:"",
-    component:DashboardUserComponent
+    loadChildren:()=>import("../dashboard/pages/dashboard-user/dashboard-user.module").then(m=>m.DashboardUserModule)
+    //component:DashboardUserComponent
   },
   {
     path:"dashboardAdmin",
