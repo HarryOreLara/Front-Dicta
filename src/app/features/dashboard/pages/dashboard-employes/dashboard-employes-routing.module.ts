@@ -8,6 +8,7 @@ import { NewEtiquetasComponent } from './entradas/new-etiquetas/new-etiquetas.co
 import { AllUsuariosComponent } from './usuarios/all-usuarios/all-usuarios.component';
 import { PerfilComponent } from './usuarios/perfil/perfil.component';
 import { AllRolesComponent } from './roles/all-roles/all-roles.component';
+import { VersionComponent } from './home/version/version.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'roles',
     component: AllRolesComponent
+  },
+  {
+    path: 'version',
+    component: VersionComponent
   }
 ];
 

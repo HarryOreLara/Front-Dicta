@@ -4,6 +4,7 @@ import { SelectItem } from 'primeng/api';
 import { ApiPerfilService } from '../../shared/perfil/api-perfil.service';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -36,6 +37,7 @@ export class PerfilComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private apiPerfil:ApiPerfilService) {}
 
+  
   ngOnInit(): void {
   }
 

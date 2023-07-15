@@ -9,11 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
+import { ListBlogComponent } from './features/blog/list-blog/list-blog.component';
+import { ViewBlogComponent } from './features/blog/view-blog/view-blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListBlogComponent,
+    ViewBlogComponent
   ],
   imports: [
     BrowserModule,

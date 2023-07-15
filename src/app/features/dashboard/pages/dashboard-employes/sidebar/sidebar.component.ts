@@ -16,12 +16,14 @@ export class SidebarComponent {
         icon: 'pi pi-fw pi-home',
         items:[
           {
-            label: 'Sibposision 1.1',
-            icon: 'pi pi-fw pi-pencil'
+            label: 'Escritorio',
+            icon: 'pi pi-fw pi-pencil',
+            routerLink:'/dashboardEmployes'
           },
           {
-            label: 'Subopción 1.2',
-            icon: 'pi pi-fw pi-tags'
+            label: 'Version',
+            icon: 'pi pi-fw pi-tags',
+            routerLink:'/dashboardEmployes/version'
           }
         ]
       },
@@ -96,7 +98,7 @@ export class SidebarComponent {
         label: 'Cerrar Sesion',
         icon: 'pi pi-power-off'
       }
-    ]
+    ];
    }
 
 }
