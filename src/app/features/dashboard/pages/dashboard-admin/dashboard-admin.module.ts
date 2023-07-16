@@ -26,6 +26,10 @@ import { ButtonModule } from 'primeng/button';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ListboxModule } from 'primeng/listbox';
 import { DropdownModule } from 'primeng/dropdown';
+import { ContratoNewComponent } from './contrato/contrato-new/contrato-new.component';
+import { ContratoAllComponent } from './contrato/contrato-all/contrato-all.component';
+import { TrabajadorNewComponent } from './trabajador/trabajador-new/trabajador-new.component';
+import { TrabajadorAllComponent } from './trabajador/trabajador-all/trabajador-all.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { DropdownModule } from 'primeng/dropdown';
     VersionComponent,
     RolesAllComponent,
     UsuariosAllComponent,
-    PerfilAdminComponent
+    PerfilAdminComponent,
+    ContratoNewComponent,
+    ContratoAllComponent,
+    TrabajadorNewComponent,
+    TrabajadorAllComponent
   ],
   imports: [
     CommonModule,

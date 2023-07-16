@@ -54,6 +54,38 @@ export class SidebarAdminComponent {
         ]
       },
       {
+        label:'Trabajadores',
+        icons:'pi pi-fw pi-calendar',
+        items:[
+          {
+            label:'Todos los trabajadores',
+            icon: 'pi pi-fw pi-search',
+            routerLink: '/dashboardAdmin/trabajador-all'
+          },
+          {
+            label:'Nuevo Trabajador',
+            icon: 'pi pi-fw pi-search',
+            routerLink: '/dashboardAdmin/trabajador-new'
+          }
+        ]
+      },
+      {
+        label:'Contrato',
+        icon: 'pi pi-fw pi-calendar',
+        items:[
+          {
+            label:'Todos los contratos',
+            icon: 'pi pi-fw pi-search',
+            routerLink: '/dashboardAdmin/contrato-all'
+          },
+          {
+            label:'Nuevo Contrato',
+            icon: 'pi pi-fw pi-search',
+            routerLink: '/dashboardAdmin/contrato-new'
+          }
+        ]
+      },
+      {
         label: 'Usuarios',
         icon: 'pi pi-user',
         items: [

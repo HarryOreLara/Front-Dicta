@@ -11,6 +11,10 @@ import { RolesAllComponent } from './roles/roles-all/roles-all.component';
 import { VersionComponent } from './home/version/version.component';
 import { UsuariosAllComponent } from './usuarios/usuarios-all/usuarios-all.component';
 import { PoustNewComponent } from './entradas/poust-new/poust-new.component';
+import { ContratoAllComponent } from './contrato/contrato-all/contrato-all.component';
+import { ContratoNewComponent } from './contrato/contrato-new/contrato-new.component';
+import { TrabajadorNewComponent } from './trabajador/trabajador-new/trabajador-new.component';
+import { TrabajadorAllComponent } from './trabajador/trabajador-all/trabajador-all.component';
 
 const routes: Routes = [
   {
@@ -56,6 +60,22 @@ const routes: Routes = [
   {
     path: 'version',
     component: VersionComponent
+  },
+  {
+    path:'contrato-all',
+    component:ContratoAllComponent
+  },
+  {
+    path: 'contrato-new',
+    component: ContratoNewComponent
+  },
+  {
+    path: 'trabajador-new',
+    component: TrabajadorNewComponent
+  },
+  {
+    path: 'trabajador-all',
+    component: TrabajadorAllComponent
   }
 ];
 
