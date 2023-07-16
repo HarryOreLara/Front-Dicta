@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
 export class SidebarComponent {
   items:any[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.items = [
       {
         label: 'Home',
@@ -96,9 +96,15 @@ export class SidebarComponent {
       },
       {
         label: 'Cerrar Sesion',
-        icon: 'pi pi-power-off'
+        icon: 'pi pi-power-off',
+        command:()=>this.cerrarSesion()
       }
     ];
    }
+
+   cerrarSesion(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
 
 }

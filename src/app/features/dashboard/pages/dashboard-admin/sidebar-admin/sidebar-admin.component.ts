@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-admin',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class SidebarAdminComponent {
   items:any[];
 
-  constructor() {
+  constructor(private router:Router) {
     this.items = [
       {
         label: 'Home',
@@ -105,8 +106,14 @@ export class SidebarAdminComponent {
       },
       {
         label: 'Cerrar Sesion',
-        icon: 'pi pi-power-off'
+        icon: 'pi pi-power-off',
+        command:()=>this.cerrarSesion()
       }
     ];
    }
+   
+   cerrarSesion(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
 }

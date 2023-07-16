@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, of, tap,BehaviorSubject } from 'rxjs';
+import { Observable, catchError, map, of, tap,BehaviorSubject, Subscriber } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -64,6 +64,67 @@ export class AuthService {
     );
   }
 
+    //Esto es para los Guards - CanActivate
+  validarToken(): Observable<boolean> {
 
+    const token = JSON.parse(localStorage.getItem("user")!);
+
+    if (token) {
+      return new Observable((subscriber) => {
+        subscriber.next(true);
+      });
+    } else {
+      return new Observable((subscriber) => {
+        subscriber.next(false);
+      });
+    }
+  }
+
+  validarRolSUser():Observable<boolean>{
+    const rol = JSON.parse(localStorage.getItem('user')!);
+
+    if (rol.rol === 3) {
+      return new Observable((sub)=>{
+        sub.next(true);
+      })
+    }else{
+      return new Observable((subscriber) => {
+        subscriber.next(false);
+      });
+    }
+  }
+
+  validarRolEmploye():Observable<boolean>{
+    const rol = JSON.parse(localStorage.getItem('user')!);
+
+    if (rol.rol === 2) {
+      return new Observable((sub)=>{
+        sub.next(true);
+      })
+    }else{
+      return new Observable((subscriber) => {
+        subscriber.next(false);
+      });
+    }
+  }
+
+  validarRolAdmi():Observable<boolean>{
+    const rol = JSON.parse(localStorage.getItem('user')!);
+
+    if (rol.rol === 1) {
+      return new Observable((sub)=>{
+        sub.next(true);
+      })
+    }else{
+      return new Observable((subscriber) => {
+        subscriber.next(false);
+      });
+    }
+  }
+
+  getLocal(){
+    const rol = JSON.parse(localStorage.getItem('user')!);
+    return rol.rol;
+  }
 
 }

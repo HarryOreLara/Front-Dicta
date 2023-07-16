@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivateChild } from '@angular/router';
 import { NinosComponent } from './features/dashboard/pages/dashboard-nav/ninos/ninos.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
 
@@ -11,7 +12,7 @@ const routes: Routes = [
   },
   {
     path:"",
-    loadChildren:()=>import("./features/dashboard/dashboard.module").then(m=>m.DashboardModule)
+    loadChildren:()=>import("./features/dashboard/dashboard.module").then(m=>m.DashboardModule),
   },
   {
     path:"**",

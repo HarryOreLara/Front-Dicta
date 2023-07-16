@@ -9,8 +9,8 @@ import { AcademiaComponent } from './academia/academia.component';
 
 const routes: Routes = [
   {
-    path:"niños",
-    component:NinosComponent,
+    path:"ninos",
+    component:NinosComponent
   },
   {
     path:"jovenes",

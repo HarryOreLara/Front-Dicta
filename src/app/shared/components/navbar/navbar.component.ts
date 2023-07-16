@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
     {
       label: 'Niños',
       icon: '',
-      routerLink: '/nav/niños',
+      routerLink: '/nav/ninos',
     },
     {
       label: 'Jovenes',

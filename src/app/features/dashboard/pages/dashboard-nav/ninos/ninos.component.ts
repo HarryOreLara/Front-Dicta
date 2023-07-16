@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NinosComponent {
 
+  constructor(){
+  }
 
   events = [
     {
@@ -17,4 +19,7 @@ export class NinosComponent {
     },
   ]
 
+
+
+  
 }
