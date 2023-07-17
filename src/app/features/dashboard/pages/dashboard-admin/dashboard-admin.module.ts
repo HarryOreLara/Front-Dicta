@@ -31,6 +31,7 @@ import { ContratoAllComponent } from './contrato/contrato-all/contrato-all.compo
 import { TrabajadorNewComponent } from './trabajador/trabajador-new/trabajador-new.component';
 import { TrabajadorAllComponent } from './trabajador/trabajador-all/trabajador-all.component';
 import { CalendarModule } from 'primeng/calendar';
+import { RolUpdateComponent } from './roles/rol-update/rol-update.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CalendarModule } from 'primeng/calendar';
     ContratoNewComponent,
     ContratoAllComponent,
     TrabajadorNewComponent,
-    TrabajadorAllComponent
+    TrabajadorAllComponent,
+    RolUpdateComponent
   ],
   imports: [
     CommonModule,

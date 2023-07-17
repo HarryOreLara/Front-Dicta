@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<div class="row cuarto-bloque">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
   <div class="col s12 m12">
     <br />
     <br />
@@ -30,7 +30,7 @@
       Cuando te educas en pautas de crianza digital recibes estos beneficios:
     </p>
   </div>
-  <div class="col s12 m4 estilo-card" *ngFor="let info of information">
+  <div class="col s12 m4 estilo-card" *ngFor="let info of information" style="width: 33.33%; margin-bottom: 20px;">
     <p-card [header]="info.header" [style]="{ width: '460px' }">
       <ng-template pTemplate="header">
         <img

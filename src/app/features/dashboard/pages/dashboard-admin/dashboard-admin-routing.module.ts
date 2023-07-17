@@ -15,6 +15,7 @@ import { ContratoAllComponent } from './contrato/contrato-all/contrato-all.compo
 import { ContratoNewComponent } from './contrato/contrato-new/contrato-new.component';
 import { TrabajadorNewComponent } from './trabajador/trabajador-new/trabajador-new.component';
 import { TrabajadorAllComponent } from './trabajador/trabajador-all/trabajador-all.component';
+import { RolUpdateComponent } from './roles/rol-update/rol-update.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: 'trabajador-all',
     component: TrabajadorAllComponent
+  },
+  {
+    path: 'rol-update/:id',
+    component:RolUpdateComponent
   }
 ];
 

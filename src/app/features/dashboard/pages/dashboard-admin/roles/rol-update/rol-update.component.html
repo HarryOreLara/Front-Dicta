@@ -3,10 +3,10 @@
       <app-sidebar-admin></app-sidebar-admin>
     </div>
     <div class="col s12 m9">
-      <form [formGroup]="formRol" (ngSubmit)="guardar()">
+      <form [formGroup]="formRol" (ngSubmit)="actualizar()">
         <div class="form-group">
           <br />
-          <span>Añadir nuevo Rol</span>
+          <span>Actualizar Rol</span>
           <br />
           <br />
           <label for="numRol">Numero de Rol</label>
@@ -33,7 +33,7 @@
         <br />
         <p-button
           type="ngSubmit"
-          label="Añadir nuevo Rol"
+          label="Actualizar Rol"
           styleClass="p-button-raised p-button-success"
         ></p-button>
       </form>

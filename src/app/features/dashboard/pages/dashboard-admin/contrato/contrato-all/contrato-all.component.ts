@@ -9,7 +9,8 @@ import { ContratoService } from '../../shared/contrato.service';
 export class ContratoAllComponent implements OnInit{
 
 
-  contratos:any=[]
+  contratos: any[] = []; // Aquí tendrás tus datos de contratos
+  rolToUpdate: string = ''; // Variable para almacenar el nuevo rol
 
   constructor(private apiContrato: ContratoService){}
 
@@ -25,6 +26,7 @@ export class ContratoAllComponent implements OnInit{
       this.contratos = res.contrato;
     })
   }
+
 
 
 }

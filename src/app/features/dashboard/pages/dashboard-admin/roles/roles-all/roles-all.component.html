@@ -3,24 +3,28 @@
       <app-sidebar-admin></app-sidebar-admin>
     </div>
     <div class="col s12 m9">
-      <p-table [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header">
+      <table class="table table-hover">
+        <thead>
           <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
+            <th scope="col">Numero de Rol</th>
+            <th scope="col">Nombre de Rol</th>
+
           </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-product>
-          <tr>
-            <td>{{ product.code }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.quantity }}</td>
+        </thead>
+        <tbody *ngFor="let item of roles">
+          <tr class="table-active">
+
+            <th>{{item.numRol}}</th>
+            <td>{{item.nombreRol}}</td>
+            <td>
+              <button pButton type="button" label="Actualizar Rol" (click)="navegarUpdate(item._id)"></button>
+
+
+            </td>
           </tr>
-        </ng-template>
-      </p-table>
+        </tbody>
+
+      </table>
     </div>
   </div>
   
