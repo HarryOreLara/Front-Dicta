@@ -30,6 +30,7 @@ import { ContratoNewComponent } from './contrato/contrato-new/contrato-new.compo
 import { ContratoAllComponent } from './contrato/contrato-all/contrato-all.component';
 import { TrabajadorNewComponent } from './trabajador/trabajador-new/trabajador-new.component';
 import { TrabajadorAllComponent } from './trabajador/trabajador-all/trabajador-all.component';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { TrabajadorAllComponent } from './trabajador/trabajador-all/trabajador-a
     MultiSelectModule,
     ReactiveFormsModule,
     ListboxModule,
-    DropdownModule
+    DropdownModule,
+    CalendarModule
   ]
 })
 export class DashboardAdminModule { }

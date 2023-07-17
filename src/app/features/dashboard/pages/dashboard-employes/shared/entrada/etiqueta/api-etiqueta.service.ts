@@ -44,4 +44,18 @@ export class ApiEtiquetaService {
         catchError((err) => of(err.error.msg))
       );
   }
+
+
+  update(){
+    const headers = {
+      'x-auth-token': this.user.token,
+    };
+  }
+
+
+  delete(){
+    const headers = {
+      'x-auth-token': this.user.token,
+    };
+  }
 }

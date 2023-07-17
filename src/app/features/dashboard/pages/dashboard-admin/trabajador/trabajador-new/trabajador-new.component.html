@@ -1,7 +1,53 @@
 <div class="row">
-    <div class="col s12 m3">
-      <app-sidebar-admin></app-sidebar-admin>
-    </div>
-    <div class="col s12 m4">
-    </div>
+  <div class="col s12 m3">
+    <app-sidebar-admin></app-sidebar-admin>
+  </div>
+  <div class="col s12 m4">
+    <form [formGroup]="formTrabajador" (ngSubmit)="guardar()">
+      <div>
+        <label for="nombre">Nombre</label>
+        <input  type="text" pInputText formControlName="nombre" />
+      </div>
+      <div>
+        <label for="apellidos">Apellidos</label>
+        <input  type="text" pInputText formControlName="apellidos" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input  type="email" pInputText formControlName="email"/>
+      </div>
+      <div>
+        <label for="edad">Edad</label>
+        <input type="number" pInputText formControlName="edad" />
+      </div>
+      <div>
+        <label for="genero">Genero</label>
+        <p-listbox
+          [options]="genero"
+          formControlName="genero"
+          optionValue="value"
+          optionLabel="name"
+          [style]="{ width: '15rem' }"
+        ></p-listbox>
+      </div>
+      <br>
+      <div>
+        <label for="dni">DNI</label>
+        <input type="number" pInputText formControlName="dni" />
+      </div>
+      <div>
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <p-calendar formControlName="fechaNacimiento" [dateFormat]="'dd/mm/yy'"  (onSelect)="onFechaNacimientoSelect($event)"></p-calendar>
+      </div>
+      <div>
+        <label for="profesion">Profesion</label>
+        <input type="text" pInputText formControlName="profesion" />
+      </div>
+      <br>
+      <div>
+        <p-button type="ngSubmit" label="Guardar Trabajador"></p-button>
+      </div>
+      <br />
+    </form>
+  </div>
 </div>

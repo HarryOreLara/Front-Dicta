@@ -16,7 +16,6 @@ import { ViewBlogComponent } from './features/blog/view-blog/view-blog.component
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListBlogComponent,
     ViewBlogComponent
   ],
   imports: [

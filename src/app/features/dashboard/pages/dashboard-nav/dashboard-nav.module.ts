@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ListBlogComponent } from 'src/app/features/blog/list-blog/list-blog.component';
+
 import { DashboardNavRoutingModule } from './dashboard-nav-routing.module';
 import { NinosComponent } from './ninos/ninos.component';
 import { JovenesComponent } from './jovenes/jovenes.component';
@@ -23,7 +25,8 @@ import { TagModule } from 'primeng/tag';
     JovenesComponent,
     PadresComponent,
     BlogComponent,
-    MundoDictarianoComponent
+    MundoDictarianoComponent,
+    ListBlogComponent
     
   ],
   imports: [

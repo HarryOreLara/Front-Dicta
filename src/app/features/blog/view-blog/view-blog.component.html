@@ -1,1 +1,41 @@
-<p>view-blog works!</p>
+<div *ngFor="let blog of allBlog" class="container">
+    <div>
+        <h1>{{blog.titulo}}</h1>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col s12 m6">
+            <p>{{blog.parrafo1}}</p>
+        </div>
+        <div class="col s12 m6">
+            <p>{{blog.archivo1}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col s12 m6">
+            <p>{{blog.archivo2}}</p>
+        </div>
+        <div class="col s12 m6">
+            <p>{{blog.parrafo2}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col s12 m6">
+            <p>{{blog.parrafo3}}</p>
+        </div>
+        <div class="col s12 m6">
+            <p>{{blog.archivo3}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col s12 m6">
+            <p>{{blog.archivo4}}</p>
+        </div>
+        <div class="col s12 m6">
+            <p>{{blog.parrafo4}}</p>
+        </div>
+    </div>
+</div>

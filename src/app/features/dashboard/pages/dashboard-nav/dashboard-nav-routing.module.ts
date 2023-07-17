@@ -6,6 +6,7 @@ import { PadresComponent } from './padres/padres.component';
 import { BlogComponent } from './blog/blog.component';
 import { MundoDictarianoComponent } from './mundo-dictariano/mundo-dictariano.component';
 import { AcademiaComponent } from './academia/academia.component';
+import { ViewBlogComponent } from 'src/app/features/blog/view-blog/view-blog.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path:"blog",
     component: BlogComponent
+  },
+  {
+    path: 'view-blog',
+    component:ViewBlogComponent
   },
   {
     path:"mundoDictariano",
