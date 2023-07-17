@@ -2,6 +2,37 @@
     <div class="col s12 m3">
       <app-sidebar-admin></app-sidebar-admin>
     </div>
-    <div class="col s12 m4">
+    <div class="col s12 m6">
+
+      <form [formGroup]="formContrato" (ngSubmit)="guardar()">
+
+        <br>
+        <br>
+        <div class="form-group">
+          <span>Trabajador:</span>
+          <p-multiSelect
+            [options]="trabajador"
+            formControlName="idTrabajador"
+          ></p-multiSelect>
+        </div>
+
+        <div>
+          <label for="fechaInicio">Fecha Inicio</label>
+          <input  type="date" pInputText formControlName="fechaInicio" />
+        </div>
+        <div>
+          <label for="fechaFin">Fecha Fin</label>
+          <input  type="date" pInputText formControlName="fechaFin" />
+        </div>
+        <div>
+          <label for="sueldo">Sueldo</label>
+          <input  type="number" pInputText formControlName="sueldo"/>
+        </div>
+        <br>
+        <div>
+          <p-button type="ngSubmit" label="Guardar Trabajador"></p-button>
+        </div>
+        <br />
+      </form>
     </div>
 </div>

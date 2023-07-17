@@ -3,25 +3,25 @@
       <app-sidebar-admin></app-sidebar-admin>
     </div>
     <div class="col s12 m9">
-      <p-table
-      [columns]="cols"
-      [value]="trabajadores"
-      [tableStyle]="{ 'min-width': '50rem' }"
-    >
-      <ng-template pTemplate="header" let-columns>
+    <table class="table table-hover">
+      <thead>
         <tr>
-          <th *ngFor="let col of columns">
-            {{ col.header }}
-          </th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Rol</th>
+          <th scope="col">N° Post</th>
+          <th scope="col">Opciones</th>
         </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr>
-          <td *ngFor="let col of columns">
-            {{ rowData[col.field] }}
-          </td>
+      </thead>
+      <tbody *ngFor="let item of trabajadores">
+        <tr class="table-active">
+          <th>{{item.nombre}}</th>
+          <td>{{item.email}}</td>
+          <td>{{item.rol}}</td>
+          <td>{{item.fechaNacimiento | date: 'shortDate'}}</td>
+          <td><button type="button" class="btn btn-info">Editar</button></td>
         </tr>
-      </ng-template>
-    </p-table>
+      </tbody>
+    </table>
     </div>
 </div>

@@ -31,7 +31,7 @@ export class TrabajadorNewComponent implements OnInit{
   formTrabajador:FormGroup =  this.fb.group({
     nombre:['', [Validators.required, Validators.minLength(3)]],
     apellidos:['', [Validators.required, Validators.minLength(3)]],
-    email:['', [Validators.required, Validators.email]],
+    email:['', [Validators.required, Validators.email, Validators.minLength(12)]],
     edad:['', [Validators.required, Validators.min(18), Validators.max(50)]],
     genero:['',[ Validators.required]],
     dni:['', [Validators.required, Validators.minLength(8), Validators.maxLength(13)]],
@@ -70,7 +70,6 @@ export class TrabajadorNewComponent implements OnInit{
         });
       }
     })
-    console.log(this.formTrabajador.value)
   }
 
 

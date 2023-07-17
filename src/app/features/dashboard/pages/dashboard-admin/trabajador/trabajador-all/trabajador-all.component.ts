@@ -7,15 +7,9 @@ import { TrabajadorService } from '../../shared/trabajador.service';
   styleUrls: ['./trabajador-all.component.scss']
 })
 export class TrabajadorAllComponent implements OnInit{
-  cols = [
-    { field: 'nombre', header: 'Nombre' },
-    { field: 'edad', header: 'Edad' },
-    { field: 'email', header: 'Email' },
-    { field: 'profesion', header: 'Profesion' },
-    { field: 'fechaNacimiento', header: 'Fecha de Nacimiento' }
-  ];
 
-  trabajadores = [];
+
+  trabajadores:any = [];
 
   constructor(private apiTrabajador:TrabajadorService){}
 
@@ -25,8 +19,7 @@ export class TrabajadorAllComponent implements OnInit{
 
   getAllTrabajadores(){
     this.apiTrabajador.getAll().subscribe((res)=>{
-      console.log(res.trabajador)
-      console.log(res)
+      //console.log(res.trabajador)
       this.trabajadores = res.trabajador;
     })
   };

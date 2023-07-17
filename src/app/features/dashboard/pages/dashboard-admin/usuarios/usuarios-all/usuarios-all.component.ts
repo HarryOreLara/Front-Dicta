@@ -9,12 +9,6 @@ import { UserService } from '../../../dashboard-employes/shared/usuarios/user.se
 export class UsuariosAllComponent implements OnInit{
   users:any = [];
 
-  cols = [
-    { field: 'username', header: 'Username' },
-    { field: 'email', header: 'Email' },
-    { field: 'rol', header: 'Rol' },
-    { field: 'nPoust', header: 'N° Posts' }
-  ];
 
   constructor( private apiUsers:UserService){}
 

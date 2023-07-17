@@ -3,6 +3,43 @@
       <app-dashboard-admin></app-dashboard-admin>
     </div>
     <div class="col s12 m9">
-        <p>Formulario</p>
+      <form [formGroup]="formRol" (ngSubmit)="guardar()">
+        <div class="form-group">
+          <br />
+          <span>Añadir nuevo Rol</span>
+          <br />
+          <br />
+          <label for="numRol">Numero de Rol</label>
+          <input
+            type="number"
+            formControlName="numRol"
+            class="form-control"
+            aria-describedby="helpId"
+          />
+          <small id="titulo" class="text-muted"></small>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="nombreRol">Nombre de Rol</label>
+          <input
+            type="text"
+            class="validate"
+            aria-describedby="helpId"
+            formControlName="nombreRol"
+          />
+          <small id="slug" class="text-muted"
+            >El «slug» es la versión amigable de la URL para el nombre. Suele
+            estar en todo en minúsculas y contiene solo letras, números y
+            guiones.</small
+          >
+        </div>
+
+        <br />
+        <p-button
+          type="ngSubmit"
+          label="Añadir nueva categoria"
+          styleClass="p-button-raised p-button-success"
+        ></p-button>
+      </form>
       </div>
 </div>
