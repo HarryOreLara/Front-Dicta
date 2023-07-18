@@ -6,11 +6,11 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">Username</th>
+          <th scope="col">Nombre Trabajador</th>
           <th scope="col">Email</th>
           <th scope="col">Rol</th>
           <th scope="col">N° Post</th>
-          <th scope="col">Opciones</th>
+          <th style="align-items: center; text-align: center;" colspan="2">Opciones</th>
         </tr>
       </thead>
       <tbody *ngFor="let item of trabajadores">
@@ -19,7 +19,8 @@
           <td>{{item.email}}</td>
           <td>{{item.rol}}</td>
           <td>{{item.fechaNacimiento | date: 'shortDate'}}</td>
-          <td><button type="button" class="btn btn-info">Editar</button></td>
+          <td><p-button label="Editar" (onClick)="navegarUpdate(item._id)" styleClass="p-button-warning"></p-button></td>
+          <td><p-button label="Eliminar" (onClick)="eliminarTrabajador(item._id)" styleClass="p-button-danger"></p-button></td>
         </tr>
       </tbody>
     </table>

@@ -21,7 +21,6 @@ export class RolUpdateComponent {
   constructor(private fb:FormBuilder, private apiRol:RolService, private route:ActivatedRoute){}
 
   ngOnInit(): void {
-
     this.route.paramMap.subscribe(params=>{
       let id = params.get('id');
       console.log(id)

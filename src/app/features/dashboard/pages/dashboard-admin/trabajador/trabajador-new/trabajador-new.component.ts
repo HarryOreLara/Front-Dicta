@@ -36,7 +36,7 @@ export class TrabajadorNewComponent implements OnInit{
     genero:['',[ Validators.required]],
     dni:['', [Validators.required, Validators.minLength(8), Validators.maxLength(13)]],
     fechaNacimiento:['', [Validators.required, fechaNacimientoValidator]],
-    profesion:['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]]
+    profesion:['', [Validators.required, Validators.minLength(4), Validators.maxLength(25)]]
   })
 
   genero = [
@@ -55,18 +55,22 @@ export class TrabajadorNewComponent implements OnInit{
   }
 
   guardar(){
+
+    console.log(this.formTrabajador.value)
     this.apitrabajador.create(this.formTrabajador.value).subscribe((res)=>{
+      //console.log(res)
       if (res==true) {
         Swal.fire({
           title:'Exito',
           icon: 'success',
           text:'Trabajador registrado correctamente'
         });
+        this.formTrabajador.reset();
       }else{
         Swal.fire({
           title: 'Error...',
           icon: 'error',
-          text: 'Ups! Algo Paso'
+          text: res
         });
       }
     })
@@ -80,5 +84,5 @@ export class TrabajadorNewComponent implements OnInit{
     }
   }
 
-  
+
 }

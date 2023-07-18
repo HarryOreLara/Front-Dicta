@@ -7,7 +7,7 @@ import { ApiPostService } from '../../../dashboard-employes/shared/entrada/post/
   styleUrls: ['./poust-all.component.scss']
 })
 export class PoustAllComponent implements OnInit{
-  poust = [];
+  poust:any = [];
 
   cols = [
     { field: 'titulo', header: 'Titulo' },

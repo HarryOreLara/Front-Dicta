@@ -32,6 +32,9 @@ import { TrabajadorNewComponent } from './trabajador/trabajador-new/trabajador-n
 import { TrabajadorAllComponent } from './trabajador/trabajador-all/trabajador-all.component';
 import { CalendarModule } from 'primeng/calendar';
 import { RolUpdateComponent } from './roles/rol-update/rol-update.component';
+import { PoustUpdateComponent } from './entradas/poust-update/poust-update.component';
+import { TrabajadorUpdateComponent } from './trabajador/trabajador-update/trabajador-update.component';
+import { UsuarioUpdateComponent } from './usuarios/usuario-update/usuario-update.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { RolUpdateComponent } from './roles/rol-update/rol-update.component';
     ContratoAllComponent,
     TrabajadorNewComponent,
     TrabajadorAllComponent,
-    RolUpdateComponent
+    RolUpdateComponent,
+    PoustUpdateComponent,
+    TrabajadorUpdateComponent,
+    UsuarioUpdateComponent
   ],
   imports: [
     CommonModule,

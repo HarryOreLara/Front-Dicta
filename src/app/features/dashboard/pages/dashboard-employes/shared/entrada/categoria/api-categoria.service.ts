@@ -27,23 +27,20 @@ export class ApiCategoriaService {
   create(form: any) {
     //localhost:3000/categoria/create
 
-    console.log(form);
     const headers = {
       'x-auth-token': this.user.token,
     };
 
-    // return this.http.post<any>(`${this.baseUrl}/categoria/create`, form, {
-    //   headers,
-    // });
-    
-    return this.http.post<any>(`${this.baseUrl}/categoria/create`, form, {
-      headers,
-    }).pipe(
-      map((res)=>{
-        return res.ok
-      }),
-      catchError((err)=>of(err.error.msg))
-    );
+    return this.http
+      .post<any>(`${this.baseUrl}/categoria/create`, form, {
+        headers
+      })
+      .pipe(
+        map((res) => {
+          return res.ok;
+        }),
+        catchError((err) => of(err.error.msg))
+      );
   }
 
   update() {}

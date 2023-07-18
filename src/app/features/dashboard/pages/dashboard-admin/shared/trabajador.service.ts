@@ -28,8 +28,12 @@ export class TrabajadorService {
     );
   }
 
-  getOne(){
+  getOne(id:string){
+    const headers = {
+      'x-auth-token': this.user.token,
+    };
 
+    return this.http.get<any>(`${this.baseUrl}/trabajador/readone/${id}`, {headers})
   }
 
   getAll(){
@@ -40,12 +44,30 @@ export class TrabajadorService {
     return this.http.get<any>(`${this.baseUrl}/trabajador/read`, { headers })
   }
 
-  update(){
+  update(form:any, id:string){
+    const headers = {
+      'x-auth-token': this.user.token,
+    };
 
+    return this.http.put<any>(`${this.baseUrl}/trabajador/update/${id}`, form, {headers}).pipe(
+      map((res)=>{
+        return res.ok
+      }),
+      catchError((err)=>of(err.error.msg))
+    );
   }
 
 
-  delete(){
+  delete(id:string){
+    const headers = {
+      'x-auth-token': this.user.token,
+    };
 
+    return this.http.delete<any>(`${this.baseUrl}/trabajador/delete/${id}`, {headers}).pipe(
+      map((res)=>{
+        return res.ok
+      }),
+      catchError((err)=>of(err.error.msg))
+    );
   }
 }

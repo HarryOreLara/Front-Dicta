@@ -20,6 +20,8 @@
             <td>{{item.rol}}</td>
             <td>{{item.rol}}</td>
             <td><button type="button" class="btn btn-warning">Editar</button></td>
+            <td><p-button label="Editar" (onClick)="navegarUpdate(item._id)" styleClass="p-button-warning"></p-button></td>
+            <td><p-button label="Eliminar" (onClick)="eliminarTrabajador(item._id)" styleClass="p-button-danger"></p-button></td>
           </tr>
         </tbody>
       </table>

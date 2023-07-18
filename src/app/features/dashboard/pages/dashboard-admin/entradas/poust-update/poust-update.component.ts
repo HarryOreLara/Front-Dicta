@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiCategoriaService } from '../../../dashboard-employes/shared/entrada/categoria/api-categoria.service';
 import { ApiPostService } from '../../../dashboard-employes/shared/entrada/post/api-post.service';
+import { ApiCategoriaService } from '../../../dashboard-employes/shared/entrada/categoria/api-categoria.service';
 import { Categoria } from 'src/app/shared/models/categoria.model';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-poust-new',
-  templateUrl: './poust-new.component.html',
-  styleUrls: ['./poust-new.component.scss'],
+  selector: 'app-poust-update',
+  templateUrl: './poust-update.component.html',
+  styleUrls: ['./poust-update.component.scss']
 })
-export class PoustNewComponent implements OnInit {
+export class PoustUpdateComponent implements OnInit{
   opciones: any[] = ['hola', 'mundo'];
 
   valoresSeleccionados: any[] = [];
@@ -18,9 +18,9 @@ export class PoustNewComponent implements OnInit {
   uploadedFiles: File[] = [];
 
   formPoust: FormGroup = this.fb.group({
-    titulo: ['', [Validators.required]],
-    fraseClave: ['', [Validators.required]],
-    slug: ['', [Validators.required]],
+    titulo: ['', [Validators.required, Validators.minLength(3)]],
+    fraseClave: ['', [Validators.required, Validators.minLength(3)]],
+    slug: ['', [Validators.required, Validators.minLength(5)]],
     metadescripcion: ['', [Validators.required]],
     parrafo1: ['', [Validators.required]],
     parrafo2: ['', [Validators.required]],
@@ -49,27 +49,37 @@ export class PoustNewComponent implements OnInit {
   }
 
   guardar() {
-    let id = this.formPoust.value.categoria[0];
-    this.formPoust.patchValue({
-      categoria: id
-    })
+    console.log(this.formPoust.value);
     this.apiPoust.createPoust(this.formPoust.value).subscribe((res) => {
-      if (res==true) {
+      if (res === true) {
         Swal.fire({
           title: 'Exito',
           icon: 'success',
           text: 'Post creado Correctamente',
         });
         this.formPoust.reset();
-      }else{
-        Swal.fire({
-          title: 'Error...',
-          icon: 'error',
-          text: 'Ups! Algo Paso',
-        });
+      } else {
       }
+      Swal.fire({
+        title: 'Error...',
+        icon: 'error',
+        text: 'Ups! Algo Paso',
+      });
     });
   }
 
+  onFileChange(event: any) {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      this.uploadedFiles = Array.from(files);
+    }
+  }
 
+  handleUpload() {
+    // Aquí puedes implementar la lógica para enviar las imágenes a la base de datos
+    if (this.uploadedFiles.length > 0) {
+      // Realiza la llamada al servicio o API para enviar las imágenes a la base de datos
+      console.log('Imágenes enviadas:', this.uploadedFiles);
+    }
+  }
 }

@@ -45,12 +45,6 @@ export class LoginComponent implements OnInit {
           default:
             break;
         }
-      } else {
-        Swal.fire({
-          title: 'Error...',
-          icon: 'error',
-          text: res,
-        });
       }
     });
   }

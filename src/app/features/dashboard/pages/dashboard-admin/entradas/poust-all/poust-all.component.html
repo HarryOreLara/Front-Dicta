@@ -4,26 +4,26 @@
     </div>
     <div class="col s12 m9" >
       <br>
-      <p-table
-        [columns]="cols"
-        [value]="poust"
-        [tableStyle]="{ 'min-width': '50rem' }"
-      >
-        <ng-template pTemplate="header" let-columns>
+      <table class="table table-hover">
+        <thead>
           <tr>
-            <th *ngFor="let col of columns">
-              {{ col.header }}
-            </th>
+            <th scope="col">Nombre de Poust</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Creador</th>
+            <th scope="col">Fecha de Creacion</th>
+            <th scope="col">Opciones</th>
           </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
-          <tr>
-            <td *ngFor="let col of columns">
-              {{ rowData[col.field] }}
-            </td>
+        </thead>
+        <tbody *ngFor="let item of poust">
+          <tr class="table-active">
+            <th>{{item.titulo}}</th>
+            <td>{{item.categoria}}</td>
+            <td>{{item.creator}}</td>
+            <td>{{item.createdAt | date:'mediumDate'}}</td>
+            <td><button type="button" class="btn btn-warning">Editar</button></td>
           </tr>
-        </ng-template>
-      </p-table>
+        </tbody>
+      </table>
     </div>
   </div>
   
