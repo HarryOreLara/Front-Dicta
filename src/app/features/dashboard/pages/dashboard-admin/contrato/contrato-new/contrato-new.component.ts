@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ContratoService } from '../../shared/contrato.service';
 import Swal from 'sweetalert2';
 import { TrabajadorService } from '../../shared/trabajador.service';
@@ -14,7 +14,7 @@ export class ContratoNewComponent implements OnInit {
   formContrato: FormGroup = this.fb.group({
     fechaInicio: ['', [Validators.required]],
     fechaFin: ['', [Validators.required]],
-    sueldo: ['', [Validators.required, Validators.minLength(3),Validators.maxLength(4)]],
+    sueldo: ['', [Validators.required, this.sueldoLengthValidator]],
     idTrabajador:['']
   });
 
@@ -69,6 +69,15 @@ export class ContratoNewComponent implements OnInit {
 
   }
 
+  sueldoLengthValidator(control: AbstractControl): ValidationErrors | null {
+    const sueldoValue = control.value;
+    const sueldoString = sueldoValue ? sueldoValue.toString() : '';
 
+    if (sueldoString.length < 3 || sueldoString.length > 4) {
+      return { invalidLength: true };
+    }
+
+    return null;
+  }
 
 }

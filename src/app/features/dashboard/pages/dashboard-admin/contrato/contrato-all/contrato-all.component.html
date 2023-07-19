@@ -2,37 +2,31 @@
   <div class="col s12 m3">
     <app-sidebar-admin></app-sidebar-admin>
   </div>
-  <div class="col s12 m4">
+  <div class="col s12 m9">
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">Username</th>
-          <th scope="col">Email</th>
-          <th scope="col">Rol</th>
-          <th scope="col">N° Post</th>
-          <th scope="col">Opciones</th>
+          <th scope="col">Fecha Inicio</th>
+          <th scope="col">Fecha Fin</th>
+          <th scope="col">Id Trabajador</th>
+          <th scope="col">Sueldo</th>
+          <th colspan="2">Opciones</th>
         </tr>
       </thead>
       <tbody *ngFor="let item of contratos">
         <tr class="table-active">
-          <th>{{ item.nombre }}</th>
-          <td>{{ item.email }}</td>
-          <td>{{ item.rol }}</td>
-          <td>{{ item.fechaNacimiento | date:'mediumDate' }}</td>
+          <th>{{ item.fechaInicio | date:'mediumDate'	 }}</th>
+          <td>{{ item.fechaFin | date:'mediumDate'	}}</td>
+          <td>{{ item._id }}</td>
+          <td>{{ item.sueldo | currency: 'USD' }}</td>
           <td>
-            <button
-              type="button"
-              class="btn btn-info"
-            >
-              Editar
-            </button>
+            <p-button label="Informacion" styleClass="p-button-rounded p-button-warning"></p-button>
+          </td>
+          <td>
+            <p-button label="Remover" styleClass="p-button-rounded p-button-danger"></p-button>
           </td>
         </tr>
       </tbody>
-
-
-
-
     </table>
   </div>
 </div>

@@ -64,4 +64,9 @@ export class PerfilAdminComponent implements OnInit {
     let email = JSON.parse(localStorage.getItem('email')!);
     return email;
   }
+
+
+  getPerfilUser(){
+
+  }
 }

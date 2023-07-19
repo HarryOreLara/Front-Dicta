@@ -9,7 +9,7 @@
           <tr>
             <th scope="col">Nombre de Poust</th>
             <th scope="col">Categoria</th>
-            <th scope="col">Creador</th>
+
             <th scope="col">Fecha de Creacion</th>
             <th scope="col">Opciones</th>
           </tr>
@@ -18,9 +18,9 @@
           <tr class="table-active">
             <th>{{item.titulo}}</th>
             <td>{{item.categoria}}</td>
-            <td>{{item.creator}}</td>
+
             <td>{{item.createdAt | date:'mediumDate'}}</td>
-            <td><button type="button" class="btn btn-warning">Editar</button></td>
+            <td><button type="button" (click)="updateNavegar(item._id)" class="btn btn-warning">Editar</button></td>
           </tr>
         </tbody>
       </table>

@@ -1,12 +1,53 @@
+
 <div class="row">
-    <div class="col s12 m3" >
+    <div class="col s12 m3">
         <app-sidebar></app-sidebar>
     </div>
-    <div class="col s12 m9">
-        <h1>Hola mundo</h1>
-        <!-- pegar -->
+    <div class="col 21 m9">
         <router-outlet></router-outlet>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Dashboard Trabajadores</a>
+              <span class="navbar-toggler-icon"></span>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cerrar sesión</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        
+          <div class="container mt-4">
+            <div class="row">
+              <!-- <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Administra los usuarios registrados en la plataforma.</p>
+                    <a routerLink="/dashboardEmployes/all-usuarios" class="btn btn-primary">Ver usuarios</a>
+                  </div>
+                </div>
+              </div> -->
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Trabajadores</h5>
+                    <p class="card-text">Administra los trabajadores.</p>
+                    <a href="" class="btn btn-primary">Ver productos</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Estadísticas</h5>
+                    <p class="card-text">Componente en desarrollo.</p>
+                    <a  class="btn btn-primary">Ver estadísticas</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 </div>
-
-

@@ -18,6 +18,7 @@ import { TrabajadorAllComponent } from './trabajador/trabajador-all/trabajador-a
 import { RolUpdateComponent } from './roles/rol-update/rol-update.component';
 import { TrabajadorUpdateComponent } from './trabajador/trabajador-update/trabajador-update.component';
 import { UsuarioUpdateComponent } from './usuarios/usuario-update/usuario-update.component';
+import { PoustUpdateComponent } from './entradas/poust-update/poust-update.component';
 
 const routes: Routes = [
   {
@@ -91,6 +92,10 @@ const routes: Routes = [
   {
     path: 'usuario-update/:id',
     component: UsuarioUpdateComponent
+  },
+  {
+    path: 'poust-update/:id',
+    component: PoustUpdateComponent
   }
 ];
 

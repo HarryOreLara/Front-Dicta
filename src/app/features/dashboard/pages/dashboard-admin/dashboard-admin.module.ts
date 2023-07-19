@@ -35,6 +35,7 @@ import { RolUpdateComponent } from './roles/rol-update/rol-update.component';
 import { PoustUpdateComponent } from './entradas/poust-update/poust-update.component';
 import { TrabajadorUpdateComponent } from './trabajador/trabajador-update/trabajador-update.component';
 import { UsuarioUpdateComponent } from './usuarios/usuario-update/usuario-update.component';
+import { ContratoUpdateComponent } from './contrato/contrato-update/contrato-update.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { UsuarioUpdateComponent } from './usuarios/usuario-update/usuario-update
     RolUpdateComponent,
     PoustUpdateComponent,
     TrabajadorUpdateComponent,
-    UsuarioUpdateComponent
+    UsuarioUpdateComponent,
+    ContratoUpdateComponent
   ],
   imports: [
     CommonModule,

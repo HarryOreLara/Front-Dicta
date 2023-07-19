@@ -30,4 +30,6 @@ export class ApiPerfilService {
         catchError((err) => of(err.error.msg))
       );
   }
+
+  
 }

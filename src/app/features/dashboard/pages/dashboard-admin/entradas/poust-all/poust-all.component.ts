@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiPostService } from '../../../dashboard-employes/shared/entrada/post/api-post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poust-all',
@@ -19,7 +20,7 @@ export class PoustAllComponent implements OnInit{
   ];
   //Titulo, autor, categoria, etiqueta, fecha, status
 
-  constructor(private apiPoust:ApiPostService){
+  constructor(private apiPoust:ApiPostService, private router:Router){
 
   }
 
@@ -32,5 +33,9 @@ export class PoustAllComponent implements OnInit{
       this.poust = res.poust;
       console.log(res.poust)
     })
+  }
+
+  updateNavegar(id:string){
+    this.router.navigate(['/dashboardAdmin/poust-update', id])
   }
 }

@@ -1,0 +1,36 @@
+input[type="file"] {
+    /* Ocultamos el input por defecto y le damos un tamaño de 0 para que no sea visible */
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  
+    /* Añadimos un cursor de apuntar para indicar que es un input clickeable */
+    cursor: pointer;
+  }
+  
+  /* Estilo para el contenedor del input "file" */
+  .file-input-container {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Estilo para el texto dentro del contenedor del input "file" */
+  .file-input-text {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  /* Estilo para el ícono de adjuntar */
+  .file-input-icon {
+    display: inline-block;
+    font-size: 18px;
+  }
